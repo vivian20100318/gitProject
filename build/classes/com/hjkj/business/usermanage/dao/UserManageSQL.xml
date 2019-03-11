@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="user_mange_space">
+	<typeAlias
+		alias="hospital_user_info"
+		type="com.hjkj.business.usermanage.po.HospitalUserInfo" />
+	<typeAlias
+		alias="casemail_menu_info"
+		type="com.hjkj.business.usermanage.po.CaseMailMenuInfo" />
+	<typeAlias
+		alias="hospital_user_query"
+		type="com.hjkj.business.usermanage.vo.HospitalUserQueryParam" />	
+	<typeAlias
+		alias="user_pwd_info"
+		type="com.hjkj.business.usermanage.vo.UserPwd" />		
+
+	<select
+		id="getHospitalUserByUserId"
+		resultClass="hospital_user_info"
+		parameterClass="java.lang.String">
+		select inner_id,user_id,user_name,user_pwd,role_json,creat_id,creat_time,user_status,user_sex,user_phone,is_admin,hospital_id,hospital_name from hospital_user_info where user_id=#user_id# 
+	</select>
+	
+	<select
+		id="getCaseMailMenuListForShow"
+		resultClass="casemail_menu_info"  parameterClass="java.util.HashMap">
+		select resource_id,resource_name,parent_id,access_path,resource_grade from menu_info
+		<dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="resource_type">
+			   resource_type = #resource_type#
+			</isNotEmpty> 
+		</dynamic>
+		 order by resource_grade 
+	</select>
+	
+	
+	
+</sqlMap>

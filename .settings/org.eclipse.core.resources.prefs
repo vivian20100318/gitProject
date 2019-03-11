@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/hjkj/business/common/CaseMailStatusCode.java=UTF-8
+encoding//src/com/hjkj/business/common/SysLogConstants.java=UTF-8
+encoding//src/com/hjkj/business/common/WebConstants.java=UTF-8
+encoding//src/com/hjkj/common/MctsSessionKeys.java=UTF-8
+encoding//src/com/hjkj/common/db/db.properties=ISO-8859-1
+encoding//src/com/hjkj/job/InitQuartzJob.java=UTF-8
+encoding//src/com/hjkj/web/controller/BaseController.java=UTF-8
+encoding//src/message.properties=UTF-8
+encoding//src/resource.properties=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+	<properties resource="com/hjkj/common/db/db.properties" />
+
+
+<settings 
+cacheModelsEnabled="false"
+enhancementEnabled="true"
+lazyLoadingEnabled="true"
+/> 
+
+<transactionManager type="JDBC" > 
+	<dataSource type="DBCP">
+			<property value="${drivers}" name="JDBC.Driver" />
+			<property value="${url}" name="JDBC.ConnectionURL" />
+			<property value="${user}" name="JDBC.Username" />
+			<property value="${password}" name="JDBC.Password" />
+			<property value="${maxActive}" name="Pool.MaximumActiveConnections" />
+			<property value="${maxIdle}" name="Pool.MaximumIdleConnections" />
+			<property value="${maxWait}" name="Pool.MaximumWait" />
+			<property value="${testOnBorrow}" name="testOnBorrow"  />
+			<property value="${validationQuery}" name="validationQuery" />
+		</dataSource>
+</transactionManager>
+
+<sqlMap resource="com/hjkj/business/usermanage/dao/UserManageSQL.xml" />		
+
+</sqlMapConfig>
